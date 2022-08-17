@@ -5,7 +5,6 @@
     "version": "1.1.0",
     "author": "Robert Irelan",
     "homepage_url": "https://github.com/telotortium/hacker-news-hide-visited-stories",
-    "default_locale": "en",
     "icons": {
       "16": "hn-hide-icon-16.png",
       "32": "hn-hide-icon-32.png",
