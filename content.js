@@ -8,16 +8,25 @@ let hideIfNotHidden = function() {
     }
     document.querySelectorAll('td.subtext a').forEach((elem) => {
         if (elem.innerText === 'hide') {
-            elem.click();
-            elem.style.backgroundColor = '#ffff00';
-            window._hackerNewsAlreadyHidden = true;
+            // Don't click hide button, because that makes us leave the current
+            // page. Instead, just use fetch to open the link in the background
+            // - this works just as well. Then update the link and text
+            // manually.
+            fetch(elem.href).then(response => {
+                if (response.ok) {
+                    elem.style.backgroundColor = '#ffff00';
+                    elem.innerText = 'un-hide';
+                    elem.href += '&un=t';
+                    window._hackerNewsAlreadyHidden = true;
+                }
+            });
         }
     });
 }
 
 let hideListener = function(_event) {
     if (document.visibilityState === 'visible') {
-        hideIfNotHidden();
+        setTimeout(hideIfNotHidden, 1000 + Math.random() * 2000);
     }
 }
 
