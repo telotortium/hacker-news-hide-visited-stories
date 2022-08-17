@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Hacker News - hide visited comments",
     "description": "Hide comment pages that you've visited",
-    "version": "1",
+    "version": "1.1.0",
     "author": "Robert Irelan",
     "content_scripts": [
       {
