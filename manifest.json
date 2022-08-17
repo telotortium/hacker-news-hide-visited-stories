@@ -1,9 +1,17 @@
 {
     "manifest_version": 3,
     "name": "Hacker News - hide visited comments",
-    "description": "Hide comment pages that you've visited",
+    "description": "Automatically hide comment pages that you've visited",
     "version": "1.1.0",
     "author": "Robert Irelan",
+    "homepage_url": "https://github.com/telotortium/hacker-news-hide-visited-stories",
+    "default_locale": "en",
+    "icons": {
+      "16": "hn-hide-icon-16.png",
+      "32": "hn-hide-icon-32.png",
+      "48": "hn-hide-icon-48.png",
+      "128": "hn-hide-icon-128.png"
+    },
     "content_scripts": [
       {
         "matches": ["*://news.ycombinator.com/*"],
